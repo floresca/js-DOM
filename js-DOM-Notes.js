@@ -1,3 +1,5 @@
+-----LESSON 2-----
+
 Use the "document" command to get access to the document object, the HTML document
 
 the document is an object and just like object you can reach into it by using a period ie:
@@ -10,3 +12,56 @@ var banner = document.getElementById('page-banner');
 If I call the variable 'banner' the result will be the element inside index.html with the ID of 'page-banner':
 // <div data-cloud9-id="10" id="page-banner">...</div>
 
+
+-----LESSON 3-----
+
+How to ask the DOM for every element with the class of title?
+
+document.getElementByClassName('title') //This access the class on the elements
+
+We can also store it into a variable:
+var titles = document.getElementsByClassName('title');
+When we call "titles" we will get all of the elements with the class title formatted like this:
+[h1.title, h2.title]
+NOTE- while this format loks like an array it is not, it is called an HTMLCollection
+NOTE- while this format is not an array is CAN be accessed like an array! (get excited!):
+        To access a particular element in the HTMLColletion call it
+            titles[0] will return the h1 element
+            titles[1] will return the h2 element
+            
+--
+
+It is also possible to call all the elements that are the same (like all the li elements in an unordered list)
+To do so:
+    var lis = document.getElementsByTagName('li') //this will return all the li elements on the page in the form of a HTMLCollection
+    
+-- 
+
+Since the elements can be turned into a "sortofArray" (HTMLCollection) we can work through them with loops 
+
+var titles = document.getElementsByClassName('title');
+
+for (i=0; i < titles.length; i++){
+	console.log(titles[i]);
+} // This will look at every item in the HTMLCollection and return each element individually to the console
+
+NOTE: Just because it sometimes behaves like an array doesnt mean it will always work like an array
+        for example: titles.forEach(function(item){
+                        console.log(item);
+                        }); //this code will return an error, the element is not a function 
+                            // this is because not all array methods will work on a HTMLCOllection
+                            
+NOTE: to use Array logic you can turn the HTMLCollection into an array
+check if something is an array console.log(Array.isArray(titles));
+console.log(Array.isArray(Array.from(titles)));
+
+you can use the Array.from logic to cycle through an array checking each item
+
+var titles = document.getElementsByClassName('title');
+
+// console.log(Array.isArray(titles)); 
+// console.log(Array.isArray(Array.from(titles)));
+
+Array.from(titles).forEach(function(item){
+    console.log(item);
+});
