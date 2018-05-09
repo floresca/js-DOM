@@ -85,3 +85,24 @@ console.log(books);
 Array.from(books).forEach(function(book) {
     console.log(book);
 });
+
+----- LESSON 5 -----
+
+//QUery selector can be used to overwrite the contents of an HTML document by pointing towards that element
+var books = document.querySelectorAll('#book-list li .name');
+
+//While calling the element by the ID or class gives a HTMLCollection, using query selector gives a nodelist
+//A Nodelist behaves like an array and loops can be run on it like an array without having to turn into array
+
+//The following code turns the items found the the query selector into and array and targets it using a loop
+//The function within the loop affect the "TEXT CONTENT" and appends more string items using +=
+//REMEMBER html text content is a string and can be concatenated like a js string
+
+Array.from(books).forEach(function(book) {
+    book.textContent += "test (book title)"
+});
+
+//You can add html by working with the innerHTML, by either replacing or appending
+const bookList = document.querySelector('#book-list');
+// bookList.innerHTML = '<h2>Books and more books...</h2>';
+bookList.innerHTML += '<p> This is how you add HTML</p>';
