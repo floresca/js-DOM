@@ -126,3 +126,21 @@ console.log('the parent element is :', bookList.parentElement.parentElement);
 //to call children elements we can just call children
 console.log(bookList.children); //this will return the elements that are childen to the one we are working in
 
+----- LESSON 8 -----
+
+How to navigate between sibling elements (elements on the same level)
+const bookList = document.querySelector('#book-list');
+
+console.log('book-list next sibling is:', bookList.nextSibling); //This will return the (next) notation that sits in between nodes!
+console.log('book-list next sibling is:', bookList.nextElementSibling); //This will return the actual element
+
+console.log('book-list previous sibling is:', bookList.previousSibling); //This will take you to the (next) notation that sits in between nodes
+console.log('book-list previous sibling is:', bookList.previousElementSibling); //This will take you to the previous element
+
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br/>Too cool for everyone else!';
+//Above we can see that we can move around and edit the document as before using the sibling calls
+//bookList calls the item with ID bookList in the document
+//next we go to the previous sibling element
+//then we find the 'p' element using query selector
+//then we append a new line break <br/> to the inner html so our new text appears underneath the existing text on the p element
+
