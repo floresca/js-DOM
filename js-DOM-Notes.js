@@ -113,3 +113,16 @@ bookList.innerHTML += '<p> This is how you add HTML</p>';
 //There are different types of NODES (elements, text, comments, attribute etc) and NODE properties
 //when you reach and grab an element you grab the node
 
+----- LESSON 7 -----
+
+// Traversing from one node to another using parentElement or parent Node
+// using parentNode and parentElement we can call the parent of the element/node we are currently working with
+const bookList = document.querySelector('#book-list');
+
+console.log('the parent node is:', bookList.parentNode);
+console.log('the parent element is :', bookList.parentElement.parentElement);
+
+// to call the children of the element we are in ideally we do not use childNode since this will return the child as well as the blank spaces that separate them
+//to call children elements we can just call children
+console.log(bookList.children); //this will return the elements that are childen to the one we are working in
+
