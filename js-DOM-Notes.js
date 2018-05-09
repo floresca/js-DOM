@@ -65,3 +65,23 @@ var titles = document.getElementsByClassName('title');
 Array.from(titles).forEach(function(item){
     console.log(item);
 });
+
+
+----- LESSON 4 -----
+
+//Query selector can be used with CSS selectors etc, # for IDs, period for classes, li with colon to look at an element
+const wmf = document.querySelector('#book-list li:nth-child(2) .name');
+
+//When Query selector encounters several documents that match the criteria, it only return the first one
+var books = document.querySelector('#book-list li .name');
+
+//Query selector ALL will return all the items that match the criteria
+books = document.querySelectorAll('#book-list li .name');
+
+console.log(books);
+
+//to turn them into an array you can add the Arra.from(variable you made up)
+//the forEach loop below will return every item in the array individually
+Array.from(books).forEach(function(book) {
+    console.log(book);
+});
