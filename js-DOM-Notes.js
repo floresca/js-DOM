@@ -172,3 +172,17 @@ link.addEventListener('click', function(e){ //the event listener runs a function
     console.log('navigation to ', e.target.textContent, ' was prevented'); //the console will tell the user that the navigation was prevented
     
 })
+
+----- LESSON 10 -----
+
+Event bubbling is when the event occurs and moves up the DOM tree making sure every event before it takes place as well
+if a button is clicked and there is an event listener in the element above, then the button event will happen, then the next event up will also do something, etc
+
+const list = document.querySelector('#book-list ul'); //the list const calls the ul element inside book-list
+
+list.addEventListener('click', function(e){ //an event listener is added to the ul
+   if(e.target.className === 'delete'){ //if the target with class name delete is clicked the button will do nothing BUT! event bubling means the event in ul will happen next
+       const li = e.target.parentElement; //the constant li looks at the parent element
+       list.removeChild(li); //the parent element says "delete the child li which we are referring to right now"
+   } 
+});
