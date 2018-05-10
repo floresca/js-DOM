@@ -199,3 +199,34 @@ addForm.addEventListener('submit', function(e){ //The event listener waits for '
 
 ----- LESSON 12 -----
 
+//IN this lesson we learned how to add elements to the html
+
+  const addForm = document.forms['add-book']; // we are still referencing the add form
+
+addForm.addEventListener('submit', function(e){
+   e.preventDefault();
+   const value = addForm.querySelector('input[type="text"]').value; //we got rid of the console.log
+   
+   //the order the children are listed matter!
+   const li = document.createElement('li'); //we gave the createElement method to the document and the new element is li
+   const bookName = document.createElement('span'); //we made a bookName value and created an element called span
+   const deleteBtn = document.createElement('span'); //we made a deleteBtn value and created and element called span
+   
+
+   deleteBtn.textContent = 'delete'; //we added the 'delete' to the textContent of the deleteBtn span element
+   bookName.textContent = value; //we added the 'value' to the textContent of bookName
+   
+   //the below will create an empty li without the above info
+   
+   li.appendChild(bookName); //this appendChild will append the bookName span into li
+   li.appendChild(deleteBtn); //this appendChild will append the deleteBtn span into li
+   list.appendChild(li); //this appendChild will append the new li to the list, which per LESSON 10 is our ul element
+});
+
+----- LESSON 13 -----
+
+   //add classes
+   bookName.classList.add('name'); //this code adds the class "name" to the bookName
+   deleteBtn.classList.add('delete'); //this code add the class "delete" to the deleteBtn
+   
+});
