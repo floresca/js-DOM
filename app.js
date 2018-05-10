@@ -105,7 +105,7 @@
 // });
 
 
-// ----- LESSON 10 -----
+// ----- LESSON 10 / Delete button functionality -----
 
 const list = document.querySelector('#book-list ul');
 
@@ -115,3 +115,14 @@ list.addEventListener('click', function(e){
        list.removeChild(li);
    } 
 });
+
+// ----- LESSON 11 -----
+
+const addForm = document.forms['add-book'];
+
+addForm.addEventListener('submit', function(e){
+   e.preventDefault();
+   const value = addForm.querySelector('input[type="text"]').value;
+   console.log(value);
+});
+

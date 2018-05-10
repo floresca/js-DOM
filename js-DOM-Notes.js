@@ -186,3 +186,16 @@ list.addEventListener('click', function(e){ //an event listener is added to the 
        list.removeChild(li); //the parent element says "delete the child li which we are referring to right now"
    } 
 });
+
+----- LESSON 11 -----
+
+const addForm = document.forms['add-book']; //forms is a special type of html, like anchors or buttons, and we can query the DOM for forms in the document
+
+addForm.addEventListener('submit', function(e){ //The event listener waits for 'submit', for information to be provided before acting
+   e.preventDefault(); //The default action of a form is to refresh the page with the items (even the ones you deleted). this prevents that
+   const value = addForm.querySelector('input[type="text"]').value; //we run query selector on the form for the input with type text/string, and we get the value of that input field to grab what is actually typed
+   console.log(value); //this just logs it to the console
+});
+
+----- LESSON 12 -----
+
