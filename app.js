@@ -116,6 +116,7 @@ list.addEventListener('click', function(e){
    } 
 });
 
+
 // ----- LESSON 11 -----
 
 const addForm = document.forms['add-book'];
@@ -150,3 +151,30 @@ addForm.addEventListener('submit', function(e){
    deleteBtn.classList.add('delete');
    
 });
+
+
+// ----- LESSON 14 -----
+
+// How to change attributes using java script
+
+// var book = document.querySelector('li:first-child.name')
+//  the above will return <span class="name">Name of the Wind</span>
+
+// book.getAttribute('class')
+//     will return the name of the attribute class, in this case "name"
+    
+// book.setAttribute('class', 'name-2')
+//     will find the class attribute and then it will change whats in it with the new value
+    
+// book.hasAttribute('class')
+//     will look inside the element for the attribute 'class' and return true or false
+    
+// book.removeAttribute('class')
+//     will remove the attribute called out from the element
+    
+// book.setAttribute('class', 'name')
+//     will add the class attribute and will give it the value of 'name'
+
+
+
+
