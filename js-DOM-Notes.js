@@ -144,3 +144,31 @@ bookList.previousElementSibling.querySelector('p').innerHTML += '<br/>Too cool f
 //then we find the 'p' element using query selector
 //then we append a new line break <br/> to the inner html so our new text appears underneath the existing text on the p element
 
+----- LESSON 9 -----
+
+var h2 = document.querySelector('#book-list h2'); //this assigns the element h2 inside the element with id book-list to the h2 variable
+
+h2.addEventListener('click', function(e){ //this event listeners wait for a click on the h2 then does a function
+    console.log(e.target); //e represent the event object. the event object with target will return h2
+    console.log(e); // the e by iteself will return the even itself (the coordinates where the click happened, whether shift was held, etc)
+});
+
+var btns = document.querySelectorAll('#book-list .delete'); // this assings the class .delete, inside booklist, to the btns variable
+
+Array.from(btns).forEach(function(btn) { //we turn btns into an array then loop through it
+    btn.addEventListener('click', function(e) { //each loop waits for a click before function
+        
+        const li = e.target.parentElement; //the event target (span) looks to its parent 'li' and we assign it to li
+        
+        li.parentNode.removeChild(li); //li calls its parent ul and tells it to delete the the child that just called it
+    });
+});
+
+// the following code will prevent the link from going anywhere
+const link = document.querySelector('#page-banner a'); //first we call the anchor element inside page-banner and assign it to 'link'
+
+link.addEventListener('click', function(e){ //the event listener runs a function on click
+    e.preventDefault(); //the event will prevent the default work that the anchor link is supposed to do
+    console.log('navigation to ', e.target.textContent, ' was prevented'); //the console will tell the user that the navigation was prevented
+    
+})
