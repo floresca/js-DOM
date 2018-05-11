@@ -265,3 +265,24 @@ hideBox.addEventListener('change', function(e){ //we gave it event listener chan
       list.style.display = "initial"; //when it returns false the list constant returns to its initial values (visible)
    }
 });
+
+----- LESSON 16 -----
+
+//making a search bar that hides items that do not match
+const searchBar = document.forms['search-books'].querySelector('input'); //this code looks at the form with search-books as its name, then inside that form it looks for the tag/element input
+
+searchBar.addEventListener('keyup', function(e){ //event listener keyup used to run the code when the user lets go of the key they are tying
+   const term = e.target.value.toLowerCase(); //value of term is target of  the code which is the input, it specifically looks for the value entered, then turns it to lower case
+   
+   const books = list.getElementsByTagName('li'); //this ensures that we look at all the elements in the ul tag
+   
+   Array.from(books).forEach(function(book){ //we turn the list into an array and run a function for the event
+      const title = book.firstElementChild.textContent; //here we look for the text content of the ul child 
+      if(title.toLowerCase().indexOf(term) != -1){ //when the string of the search does not match the strings of the target the equation returns -1, so as long as the equation does not = !1 the code can keep returning books
+         book.style.display = 'block';
+      } else {
+         book.style.display = 'none'; //this part hides the books if they = -1
+      }
+   });
+});
+
