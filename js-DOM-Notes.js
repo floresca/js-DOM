@@ -304,3 +304,14 @@ tabs.addEventListener('click', function(e){ //this adds an event listener to the
    });
    }
 });
+
+----- LESSON 8 -----
+
+document.addEventListener('DOMContentLoaded', function(){ 
+   
+    This event goes at the top of the script page
+    This event will prevent the code from running until the DOM has completely loaded
+    With this the script file can be at the top of the HTML page
+    All the javascript content should be wrapped inside this event listener
+    
+});
