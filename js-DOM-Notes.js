@@ -252,3 +252,16 @@ book.removeAttribute('class')
     
 book.setAttribute('class', 'name')
     will add the class attribute and will give it the value of 'name'
+    
+
+----- LESSON 15 -----
+
+const hideBox = document.querySelector('#hide'); /created new constant called hideBox to call the element with hide in it
+
+hideBox.addEventListener('change', function(e){ //we gave it event listener change to catch changes and run function
+   if (hideBox.checked){ //hideBox.checked will return true or false if checked or unchecked
+      list.style.display = "none"; //when it returns true the display will remove the list items (list is the constant we gave to the ul and all its items)
+   } else {
+      list.style.display = "initial"; //when it returns false the list constant returns to its initial values (visible)
+   }
+});
