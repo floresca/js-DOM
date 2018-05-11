@@ -286,3 +286,21 @@ searchBar.addEventListener('keyup', function(e){ //event listener keyup used to 
    });
 });
 
+----- LESSON 17 -----
+
+const tabs = document.querySelector('.tabs'); //This makes a reference to the tabs which is the ul with the two list items
+const panels = document.querySelectorAll('.panel'); //This makes a reference to the two div panels
+tabs.addEventListener('click', function(e){ //this adds an event listener to the tabs
+   if(e.target.tagName == "LI"){ //if the target of the event listener is an li tag from the ul
+      const targetPanel = document.querySelector(e.target.dataset.target); //dataset is an attribute that looks for a data atribute, in this case with the name of target 
+      //the data attribute target is point towards either the about id or the contact id
+      
+   panels.forEach(function(panel){ //document.querySelectorAll turns the items into a node so no need to turn into an array
+      if(panel == targetPanel){ //if panel is equal to targetPanel (which is the target #about or #contact)
+         panel.classList.add('active'); //this add the class active to the panel if the above is true
+      } else {
+         panel.classList.remove('active'); //this removes the active class from the panels that do not match. You can initialize a panel with active class to make it the default panel
+      }
+   });
+   }
+});
