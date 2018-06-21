@@ -283,10 +283,10 @@ addForm.addEventListener('submit', function(e){
 
          // ----- hide books from lesson 15
 
-const hideBox = document.querySelector('#hide');
+const hidesBox = document.querySelector('#hide');
 
-hideBox.addEventListener('change', function(e){
-   if (hideBox.checked){
+hidesBox.addEventListener('change', function(e){
+   if (hidesBox.checked){
       list.style.display = "none";
    } else {
       list.style.display = "initial";
